@@ -1,0 +1,15 @@
+# Ignore virtual environments
+/backend_env/
+
+# Ignore node_modules
+/node_modules/
+/attorney_frontend/node_modules/
+
+# Other files to ignore
+*.pyc
+__pycache__/
+*.log
+
+# .gitignore
+.env
+        .env
