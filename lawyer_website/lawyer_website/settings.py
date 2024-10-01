@@ -69,8 +69,12 @@ WSGI_APPLICATION = 'lawyer_website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'attorney_web_db',
+        'USER': 'rootz',
+        'PASSWORD': 'D35mukutl@',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 

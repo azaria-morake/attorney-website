@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const FormSection = styled.section`
   padding: 2rem;
@@ -47,10 +48,15 @@ const SubmitButton = styled.button`
 const Consult = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Handle form submission
+    try {
+      const response = await axios.post('http://localhost:8000/api/submit-form/', formData);
+      console.log(response.data);  // Check the response from the Django backend
+      alert('Form submitted successfully!');
+    } catch (error) {
+      console.error('There was an error submitting the form!', error);
+    }
   };
 
   const handleChange = (e) => {

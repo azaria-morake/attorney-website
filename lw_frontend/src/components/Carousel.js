@@ -18,9 +18,9 @@ const Image = styled.img`
 const Carousel = () => {
   return (
     <CarouselWrapper>
-      <Image src="lawyer1.jpg" alt="Lawyer 1" />
-      <Image src="lawyer2.jpg" alt="Lawyer 2" />
-      <Image src="lawyer3.jpg" alt="Lawyer 3" />
+      <Image src="bigger-smiles-Wu8rbjHVnvg-unsplash.jpg" alt="Lawyer 1" />
+      <Image src="renaldo-matamoro-86JiKaHF4I8-unsplash.jpg" alt="Lawyer 2" />
+      <Image src="lawyers.jpg" alt="Lawyer 3" />
     </CarouselWrapper>
   );
 };

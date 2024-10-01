@@ -28,7 +28,7 @@ const NavLogo = styled.h1`
 const Navbar = () => {
   return (
     <Nav>
-      <NavLogo>Lawyer Firm</NavLogo>
+      <NavLogo>Mpho Matshidiso, LLB</NavLogo>
       <div>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>

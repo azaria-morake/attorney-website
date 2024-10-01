@@ -26,7 +26,7 @@ const Home = () => {
     <div>
       <Carousel />
       <Section>
-        <h2>Welcome to Our Law Firm</h2>
+        <h2>I'm a legal practiotioner</h2>
         <InfoText>We provide expert legal advice to help you through life's challenges.</InfoText>
       </Section>
       <Footer>
