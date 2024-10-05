@@ -13,6 +13,7 @@ const theme = {
     secondary: '#ecf0f1',
     text: '#2c3e50',
     background: '#f5f5f5',
+    descrip: '#497288',
   },
 };
 

@@ -46,7 +46,7 @@ const SubmitButton = styled.button`
 `;
 
 const Consult = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,6 +80,14 @@ const Consult = () => {
           type="email" 
           name="email" 
           placeholder="Your Email" 
+          value={formData.email}
+          onChange={handleChange}
+          required 
+        />
+        <StyledInput 
+          type="phone" 
+          name="phone" 
+          placeholder="Your Phone Number" 
           value={formData.email}
           onChange={handleChange}
           required 

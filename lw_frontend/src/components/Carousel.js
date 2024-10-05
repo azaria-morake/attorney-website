@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const CarouselWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 5px;
 `;
 
 const Image = styled.img`
