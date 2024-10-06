@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const LogoWraper = styled.div`
 
@@ -46,7 +48,7 @@ const NavLink = styled(Link)`
 
   &:hover {
     background-color: white;
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text};
 `;
 
 const NavLogo = styled.h1`
@@ -55,7 +57,14 @@ const NavLogo = styled.h1`
   margin-left: 10x;
   display: flex;
   margin-right: 50px;
+  font-weight: 500
  
+`;
+
+const H3 = styled.h2`
+font-weight: 500;
+font-size: 15px;
+color: ${({ theme }) => theme.colors.secondary};
 `;
 
 const Navbar = () => {
@@ -63,11 +72,11 @@ const Navbar = () => {
   
       <NavWraper>
       <LogoWraper>
-        <img src='attorney.jpg' alt='profile pic' style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '10%', marginRight: '10px' }} />
+        <img src='lady-lawyer.jpg' alt='profile pic' style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '10%', marginRight: '10px' }} />
         <div>
         <NavLogo>Mpho Matshidiso</NavLogo>
-          <h3 style={{ margin: 0 , fontSize:'15px', color:'white'}}>Legal Advisor </h3> {/* Set margin to 0 to avoid extra spacing */}
-        </div>  
+          <H3><h2 style={{ margin: 0 , fontSize:'15px', fontWeight: '500', color:'#ecf0f1',}}>Legal Advisor </h2> {/* Set margin to 0 to avoid extra spacing */}
+          </H3></div>  
       </LogoWraper>
       
       <div>

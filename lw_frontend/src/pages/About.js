@@ -1,3 +1,5 @@
+//About.js
+
 import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

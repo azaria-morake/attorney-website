@@ -1,3 +1,5 @@
+//Consult.js
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -45,6 +47,10 @@ const SubmitButton = styled.button`
   }
 `;
 
+const Text = styled.div`
+color: ${({ theme }) => theme.colors.text};
+`;
+
 const Consult = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
 
@@ -66,7 +72,7 @@ const Consult = () => {
 
   return (
     <FormSection>
-      <h1>Consultation Form</h1>
+      <h1 color='#2c3e50'>Consultation Form</h1>
       <StyledForm onSubmit={handleSubmit}>
         <StyledInput 
           type="text" 
