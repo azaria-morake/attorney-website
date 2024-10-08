@@ -42,6 +42,20 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       background-color: ${({ theme }) => theme.colors.text};
     }
+
+  // Mobile media queries for responsive layout
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
   }
 `;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,12 +23,46 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-display: flex;
 margin-left: 20px;
 margin-right: 20px;
 margin-top: 10px;
 position: sticky;
 
+`;
+
+const Menu = styled.ul`
+  display: flex;
+  list-style: none;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: ${({ theme }) => theme.colors.text};
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    margin-top: 12.5px;
+  }
+`;
+
+// Menu items
+const MenuItem = styled.li`
+  margin-left: 2rem;
+
+  @media (max-width: 768px) {
+    margin: 1rem 0;
+    text-align: center;
+  }
+`;
+
+// Menu links
+const MenuLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.secondary};
+  text-decoration: none;
+  font-size: 1.2rem;
 `;
 
 const Nav = styled.nav`
@@ -66,12 +100,36 @@ font-weight: 500;
 font-size: 15px;
 color: ${({ theme }) => theme.colors.secondary};
 `;
+const BurgerIcon = styled.div`
+  display: none;
+  cursor: pointer;
+  color: ${ ({ theme }) => theme.colors.secondary};
+
+  @media (max-width: 768px) {
+    display: block;
+    font-size: 2rem;
+    margin-right: 40px;
+    margin-left: 20px;
+  }
+`;
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false); // State to toggle the menu
+
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
+
   return (
+  <>
   
       <NavWraper>
+      
       <LogoWraper>
+
+      <BurgerIcon onClick={toggleMenu}>
+        <FontAwesomeIcon icon={open ? faTimes : faBars} />
+      </BurgerIcon>
         <img src='lady-lawyer.jpg' alt='profile pic' style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '10%', marginRight: '10px' }} />
         <div>
         <NavLogo>Mpho Matshidiso</NavLogo>
@@ -79,12 +137,22 @@ const Navbar = () => {
           </H3></div>  
       </LogoWraper>
       
-      <div>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/consult">Consult</NavLink>
-      </div>
+      
+      <Menu open={open}>
+      
+        <MenuItem>
+          <NavLink to="/">Home</NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink to="/about">About</NavLink>
+        </MenuItem>
+        <MenuItem>
+          <NavLink to="/consult">Consult</NavLink>
+        </MenuItem>
+      
+      </Menu>
       </NavWraper>
+      </>
   
   );
 };
